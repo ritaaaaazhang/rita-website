@@ -1,0 +1,70 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    text-align: center;
+    padding-top: 60px;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-top: 80px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .gallery-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+/* 整個 header 為上下排列 + 內容置中 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* 👈 這是關鍵，讓 logo 和 nav 都水平置中 */
+  justify-content: center;
+  padding: 10px 0 10px;
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: white;
+}
+
+/* Logo */
+.header img {
+  height: 80px;
+  margin: 16px;
+}
+
+/* Nav 水平排列，置中 */
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
