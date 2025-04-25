@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+
+  <section class="zine-detail">
+    <div class="zine-content">
+        <div class="zine-text">
+            <h2>Sunsun and me!</h2>
+            <p>
+              I’m an illustrator who loves capturing little joys of everyday life. My works are often inspired by animals, emotions, and moments we tend to forget.<br>
+              Whether it's a blue bird under the persimmon tree or a duck waiting for a bus, I draw what I feel.
+            </p>
+          </div>
+      <div class="zine-images">
+        <img src="images/zine-sunsunandme1.jpg" alt="sunsunandme1">
+        <img src="images/zine-sunsunandme2.jpg" alt="sunsunandme2">
+        <img src="images/zine-sunsunandme3.jpg" alt="sunsunandme3">
+        <img src="images/zine-sunsunandme4.jpg" alt="sunsunandme4">
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://www.instagram.com/ritaaaaa.w" target="_blank">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+      <a href="mailto:ritaaaaa.zwt@gmail.com">
+        <img src="images/email.png" alt="Email">
+      </a>
+    </div>
+    <p>© 2025 Rita Zhang. All rights reserved.</p>
+  </footer>
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('nav-container').innerHTML = data;
+  
+        // 加入原本你的 JS 功能（toggle dropdown）
+        const navToggle = document.getElementById('navToggle');
+        const nav = document.getElementById('nav');
+        navToggle.addEventListener('click', () => {
+          nav.classList.toggle('active');
+        });
+  
+        const projectToggle = document.getElementById('projectToggle');
+        const projectDropdown = document.getElementById('projectDropdown');
+        projectToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          projectDropdown.classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

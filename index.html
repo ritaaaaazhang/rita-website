@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wen Ting Zhang Illustration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="nav-container"></div>
+        <div class="banner-cover">
+          <img src="images/austriaebbstown.jpg" alt="austria-ebbs-town">
+        </div>
+        <footer class="footer">
+          <div class="footer-icons">
+            <a href="https://www.instagram.com/ritaaaaa.w" target="_blank">
+              <img src="images/instagram.png" alt="Instagram">
+            </a>
+            <a href="mailto:ritaaaaa.zwt@gmail.com">
+              <img src="images/email.png" alt="Email">
+            </a>
+          </div>
+          <p>© 2025 Wen Ting Zhang. All rights reserved.</p>
+        </footer>
+
+        <script>
+          fetch('nav.html')
+            .then(res => res.text())
+            .then(data => {
+              document.getElementById('nav-container').innerHTML = data;
+        
+              // 抓取元素
+              const hamburgerBtn = document.getElementById('hamburgerBtn');
+              const mobileNav = document.getElementById('mobileNav');
+              const closeBtn = document.getElementById('closeBtn');
+              const overlay = document.getElementById('overlay');
+        
+              // 打開選單
+              hamburgerBtn.addEventListener('click', () => {
+                mobileNav.classList.add('show');
+                overlay.classList.add('show');
+              });
+        
+              // 點擊 close 關閉選單
+              closeBtn.addEventListener('click', () => {
+                mobileNav.classList.remove('show');
+                overlay.classList.remove('show');
+              });
+        
+              // 點擊遮罩區關閉選單
+              overlay.addEventListener('click', () => {
+                mobileNav.classList.remove('show');
+                overlay.classList.remove('show');
+              });
+            });
+        </script>
+        
+    </body>
+</html>

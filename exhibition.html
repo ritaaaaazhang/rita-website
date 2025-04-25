@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exhibition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+    <h1>Exhibition</h1>
+    <p> lalalalalalalalalal ~</p>
+
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://www.instagram.com/ritaaaaa.w" target="_blank">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+      <a href="mailto:ritaaaaa.zwt@gmail.com">
+        <img src="images/email.png" alt="Email">
+      </a>
+    </div>
+    <p>© 2025 Rita Zhang. All rights reserved.</p>
+  </footer>
+  <script>
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('nav-container').innerHTML = data;
+  
+        // 加入原本你的 JS 功能（toggle dropdown）
+        const navToggle = document.getElementById('navToggle');
+        const nav = document.getElementById('nav');
+        navToggle.addEventListener('click', () => {
+          nav.classList.toggle('active');
+        });
+  
+        const projectToggle = document.getElementById('projectToggle');
+        const projectDropdown = document.getElementById('projectDropdown');
+        projectToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          projectDropdown.classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

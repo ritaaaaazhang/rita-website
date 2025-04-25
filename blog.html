@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="nav-container"></div>
+        
+        <h1>My Creative Journal</h1>
+        <p>April 16, 2025 — I’ve been exploring new shapes in abstract art recently...</p>
+        <script>
+            fetch('nav.html')
+              .then(res => res.text())
+              .then(data => {
+                document.getElementById('nav-container').innerHTML = data;
+          
+                // 加入原本你的 JS 功能（toggle dropdown）
+                const navToggle = document.getElementById('navToggle');
+                const nav = document.getElementById('nav');
+                navToggle.addEventListener('click', () => {
+                  nav.classList.toggle('active');
+                });
+          
+                const projectToggle = document.getElementById('projectToggle');
+                const projectDropdown = document.getElementById('projectDropdown');
+                projectToggle.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  projectDropdown.classList.toggle('active');
+                });
+              });
+          </script>
+    </body>
+</html>

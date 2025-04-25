@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Me - Rita</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="nav-container"></div>
+        <section class="about">
+            <div class="about-container">
+              <div class="about-photo">
+                <img src="images/rita-selfportrait.png" alt="Rita Portrait">
+              </div>
+              <div class="about-text">
+                <h2>Hello, I’m Rita!</h2>
+                <p>
+                  I’m an illustrator who loves capturing little joys of everyday life.<br>
+                  My works are often inspired by animals, emotions, and moments we tend to forget.<br>
+                  Whether it's a blue bird under the persimmon tree or a duck waiting at a bus stop, I draw what I feel.
+                </p>
+              </div>
+            </div>
+          </section>
+          <script>
+            fetch('nav.html')
+              .then(res => res.text())
+              .then(data => {
+                document.getElementById('nav-container').innerHTML = data;
+          
+                // 加入原本你的 JS 功能（toggle dropdown）
+                const navToggle = document.getElementById('navToggle');
+                const nav = document.getElementById('nav');
+                navToggle.addEventListener('click', () => {
+                  nav.classList.toggle('active');
+                });
+          
+                const projectToggle = document.getElementById('projectToggle');
+                const projectDropdown = document.getElementById('projectDropdown');
+                projectToggle.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  projectDropdown.classList.toggle('active');
+                });
+              });
+          </script>
+    </body>
+</html>

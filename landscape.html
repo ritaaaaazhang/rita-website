@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+  <title>Nature Illustration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="IllustationData.js"></script>
+</head>
+<body>
+  <div id="nav-container"></div>
+  <div class="gallery" id="gallery"></div>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt=""></div>
+
+  <script>
+    // 載入 nav
+    fetch('nav.html')
+            .then(res => res.text())
+            .then(data => {
+              document.getElementById('nav-container').innerHTML = data;
+        
+              // 抓取元素
+              const hamburgerBtn = document.getElementById('hamburgerBtn');
+              const mobileNav = document.getElementById('mobileNav');
+              const closeBtn = document.getElementById('closeBtn');
+              const overlay = document.getElementById('overlay');
+        
+              // 打開選單
+              hamburgerBtn.addEventListener('click', () => {
+                mobileNav.classList.add('show');
+                overlay.classList.add('show');
+              });
+        
+              // 點擊 close 關閉選單
+              closeBtn.addEventListener('click', () => {
+                mobileNav.classList.remove('show');
+                overlay.classList.remove('show');
+              });
+        
+              // 點擊遮罩區關閉選單
+              overlay.addEventListener('click', () => {
+                mobileNav.classList.remove('show');
+                overlay.classList.remove('show');
+              });
+            });
+
+    // 過濾資料：只顯示 nature 類別
+    const galleryImages = Object.entries(illustrationProjects)
+      .filter(([id, project]) => project.category === "landscape");
+
+    const gallery = document.getElementById('gallery');
+
+    galleryImages.forEach(([id, project]) => {
+      const div = document.createElement('div');
+      div.className = 'gallery-item';
+      div.innerHTML = `
+        <img src="${project.image}" alt="${project.title}" onclick="openLightbox(this)">
+      `;
+      gallery.appendChild(div);
+    });
+
+    // 彈跳視窗開啟與關閉
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

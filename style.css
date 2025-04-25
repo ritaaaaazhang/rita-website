@@ -1,0 +1,514 @@
+/* 電腦版通用樣式 */
+/* 整個 header 為上下排列 + 內容置中 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav a,
+.nav-link {
+  text-decoration: none;
+  font-family: 'Futura', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #111;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+}
+
+/* 電腦與平板共用設定 */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 40px 40px;
+  font-family: 'Futura', sans-serif;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-text {
+  font-size: 14px;
+  font-weight: lighter;
+  text-decoration: none;
+  color: #333;
+  white-space: nowrap;
+  font-family: 'Futura', sans-serif;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.hamburger{
+  display: none;
+}
+.mobile-nav{
+  display: none;
+}
+
+/* body樣式 */
+  body {
+    background-color: #fff; 
+    font-family: 'Noto Sans TC', sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    color: #333;
+    margin: 0;
+  }
+
+  .banner-cover {
+    width: 100vw;                /* 讓容器寬度等於視窗寬度 */
+    height: 35vw;               /* 讓高度也等於視窗寬度 → 則成正方形 */
+    overflow:hidden;           /* 多出來的部分隱藏 */
+    margin: 0;                  /* 移除預設外邊距 */
+    position: relative;
+  }
+  
+  .banner-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* 填滿區塊並裁切圖像 */
+    object-position: top;
+    display: block;             /* 移除圖片底部空白 */
+  }
+  
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    flex: 0 0 calc(33.333% - 20px); /* 每列 3 張，減去間距 */
+    max-width: calc(33.333% - 20px);
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+
+/* 彈跳視窗樣式 */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.lightbox-prev {
+  left: 300px;
+}
+.lightbox-next {
+  right: 300px;
+}
+
+
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: #333;
+  margin-top: 0px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-icons {
+  margin-bottom: 10px;
+}
+
+.footer-icons img {
+  width: 40px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.about {
+  padding: 60px 20px;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap; /* 📱 手機版會自動換行 */
+  text-align: left;
+}
+
+.about-photo img {
+  width: 280px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-text {
+  max-width: 500px;
+  color: #333;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.zine-detail {
+  padding: 40px 20px;
+}
+
+.zine-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.zine-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.zine-images img {
+  width: 800px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.zine-text {
+  width: 800px;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #333;
+  text-align:left;
+  margin: 0 auto;
+}
+
+.zine-text h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.zine-text p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease-in-out;
+  padding: 20px;
+  cursor: grab;
+}
+
+.carousel-track img {
+  width: 300px;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-track img.faded {
+  opacity: 0.4;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 36px;
+  color: #333;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.category-grid {
+  display: flex;
+  width:100vw;
+  margin:0;
+  justify-content: center;
+  padding:0;
+  flex-wrap: wrap; /* ✅ 手機版可自動換行 */
+}
+
+.category-card {
+  flex:1;
+  position: relative;
+  width: 300px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(70%);
+  transition: filter 0.3s;
+}
+
+.category-card:hover img {
+  filter: brightness(100%);
+}
+
+.cover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.cover-text h2 {
+  font-size: 24px;
+  margin: 0;
+  font-family: 'Futura', sans-serif;
+}
+
+.cover-text p {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+
+/* 針對手機版本 */
+@media (max-width: 720px) {
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    color: #333;
+  }
+  .header {
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .nav {
+    display: none; /* 隱藏橫向選單 */
+  }
+
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    padding: 0 80px;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    right: -100%; /* 一開始藏在右邊 */
+    width: 70%;
+    height: 100%;
+    background-color: #f2f2f2;
+    padding: 60px 20px;
+    z-index: 999;
+    transition: right 0.3s ease;
+  }
+  
+  .mobile-nav.show {
+    right: 0;
+  }
+
+  .mobile-nav a {
+    text-decoration: none;      /* 去掉底線 */
+    color: #333;                /* 文字顏色設成灰黑色 */
+    font-family: 'Futura', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  /* 修正 visited link 顏色（防止變紫色） */
+  .mobile-nav a:visited {
+    color: #333;
+  }
+  
+  /* 補上對齊 */
+  .mobile-nav {
+    align-items: flex-start;    /* 讓文字靠左 */
+  }
+  
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 998;
+  }
+  
+  .overlay.show {
+    display: block;
+  }
+  
+  .banner-cover {
+    height: 80vh;
+    }
+
+  .zine-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .zine-text {
+    max-width: 90%;
+    text-align: left;
+  }
+
+  .zine-images img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .gallery-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .category-grid {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw
+  }
+
+  .category-card {
+    width: 100vw;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    flex: none;
+  }
+
+  .cover-text h2 {
+    font-size: 20px;
+  }
+
+  .cover-text p {
+    font-size: 13px;
+  }
+} 
+
+/* 針對平板版本 */
+@media (min-width: 720px) and (max-width: 1024px) {
+
+  .banner-cover {
+    height: 80vh;
+  }
+
+  .category-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .category-card {
+    width: 300px;
+    aspect-ratio: 3 / 4;
+  }
+  .gallery-item {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
