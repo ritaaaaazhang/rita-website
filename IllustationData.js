@@ -1,7 +1,7 @@
 const illustrationProjects = {
     1: {
       title: "austria-ebbs-town",
-      image: "images/austria-ebbs-town.jpg",
+      image: "images/austriaebbstown.jpg",
       description: "austria-ebbs-town",
       category: "landscape"
     },
